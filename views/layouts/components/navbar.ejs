@@ -1,0 +1,36 @@
+<header class="z-30 w-full px-2 py-4 bg-prime sm:px-4">
+    <div class="flex items-center justify-between mx-auto max-w-7xl">
+      <a href="/" title="Home Page" class="flex items-center">
+        <h1 class="text-2xl font-bold text-secondary">Airly</h1>
+      </a>
+      <div class="flex items-center space-x-1">
+        <div class="hidden space-x-1 md:inline-flex">
+          <a href="/" class="btn btn-sm btn-link uppercase text-secondary">Overview</a>
+          <a href="/maps" class="btn btn-sm btn-link uppercase text-secondary">Maps</a>
+          <a href="/sensors" class="btn btn-sm btn-link uppercase text-secondary">Sensors</a>
+        </div>
+        <div class="inline-flex md:hidden" x-data="{ open: false }">
+          <button class="flex-none px-2 btn btn-link btn-sm" @click="open = true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" stroke="#EFFFFD" />
+            </svg>
+            <span class="sr-only">Open Menu</span>
+          </button>
+          <div class="absolute top-0 left-0 right-0 z-50 flex flex-col p-2 pb-4 m-2 space-y-3 bg-white rounded shadow" x-show.transition="open" @click.away="open = false" x-cloak>
+            <button class="self-end flex-none px-2 ml-2 btn btn-link btn-icon" @click="open = false">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" stroke="#262626" />
+              </svg>
+              <span class="sr-only">Close Menu</span>
+            </button>
+              <a href="/" class="btn btn-sm btn-link uppercase text-neutral-700">Overview</a>
+              <a href="/maps" class="btn btn-sm btn-link uppercase text-neutral-700">Maps</a>
+              <a href="/sensors" class="btn btn-sm btn-link uppercase text-neutral-700">Sensors</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+  
+
+  

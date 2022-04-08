@@ -1,1 +1,122 @@
-<h1 class="text-center text-sky-300 text-3xl font-bold">Hello world</h1>
+<section class="px-4 py-11 mx-auto max-w-7xl font-modern">
+  <div class="pb-4">
+    <h1 class="font-medium text-2xl">Air quality index</h1>
+    <p class="text-sm">Calipaten village, 8:30 PM, 12 March</p>
+  </div>
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+    <div class="flex-row items-center p-5 card text-secondary bg-prime rounded-lg">
+      <div class="flex items-center justify-center w-20 h-20 rounded">
+        <img src="/img/icons/pm10.svg" alt="pm10-icon" class="w-16 h-16">
+      </div>
+      <div class="ml-3">
+        <h2 class="mb-3 text-lg leading-none truncate">PM10</h2>
+        <h1 class="mb-3 text-2xl">26 µg/m³</h1>
+        <span class="inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#FF6464" x-data="tooltip()" x-spread="tooltip" title="increase">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm px-2">10% This Day</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="flex-row items-center p-5 card text-secondary bg-prime rounded-lg">
+      <div class="flex items-center justify-center w-20 h-20 rounded">
+        <img src="/img/icons/co2.svg" alt="pm10-icon" class="w-16 h-16">
+      </div>
+      <div class="ml-3">
+        <h2 class="mb-3 text-lg leading-none truncate">CO2</h2>
+        <h1 class="mb-3 text-2xl">200 ppm</h1>
+        <span class="inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#FF6464" x-data="tooltip()" x-spread="tooltip" title="increase">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm px-2">15% This Day</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="flex-row items-center p-5 card text-secondary bg-prime rounded-lg">
+      <div class="flex items-center justify-center w-20 h-20 rounded">
+        <img src="/img/icons/temperature.svg" alt="pm10-icon" class="w-16 h-16">
+      </div>
+      <div class="ml-3">
+        <h2 class="mb-3 text-lg leading-none truncate">Temperature</h2>
+        <h1 class="mb-3 text-2xl">29°C</h1>
+        <span class="inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#8BDB81" x-data="tooltip()" x-spread="tooltip" title="decrease">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm px-2">5% This Day</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="flex-row items-center p-5 card text-secondary bg-prime rounded-lg">
+      <div class="flex items-center justify-center w-20 h-20 rounded">
+        <img src="/img/icons/humidity.svg" alt="pm10-icon" class="w-16 h-16">
+      </div>
+      <div class="ml-3">
+        <h2 class="mb-3 text-lg leading-none truncate">Humidity</h2>
+        <h1 class="mb-3 text-2xl">96%</h1>
+        <span class="inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#8BDB81" x-data="tooltip()" x-spread="tooltip" title="decrease">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd" />
+          </svg>
+          <p class="text-sm px-2">8% This Day</p>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark:bg-coolGray-800 dark:text-coolGray-100 font-modern px-4 py-12">
+  <div class="pb-7">
+    <h1 class="font-medium text-2xl">Map Sensor Info</h1>
+  </div>
+	<div class="bg-prime container flex flex-col justify-center p-6 mx-auto text-secondary sm:py-12 lg:py-8 lg:flex-row lg:justify-between">
+		<!-- <div class="bg-sky-300 w-full max-w-lg mx-auto flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 lg:max-w-2xl md:max-w-screen-xl">  -->  <%# delete me! in production %> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0221784479763!2d106.6162281142415!3d-6.2608086954682864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fc7ca656fdfd%3A0x782b035b695c85dc!2sPradita%20University!5e0!3m2!1sen!2sid!4v1648737786220!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="bg-slate-300 w-full max-w-lg mx-auto flex items-center justify-center mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 lg:max-w-2xl md:max-w-screen-xl"></iframe>
+		<div class="flex flex-col lg:w-5/12 p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left lg:py-0">
+			<h1 class="text-2xl font-semibold leading-none sm:text-xl">Devices</h1>
+      <div class="pt-6 inline-flex justify-center items-center lg:justify-start lg:items-start">
+        <img class="h-16 w-16" src="/img/icons/sensor.svg" alt="sensor iot">
+        <span class="text-secondary">
+          <h3 class="font-medium text-lg ">3</h3>
+          <p class="text-sm mt-2">IoT sensor totals</p>
+        </span>
+      </div>
+      <h1 class="text-2xl font-semibold leading-none sm:text-xl py-6">Sensors</h1>
+      <div class="flex flex-col justify-center items-center gap-1 md:flex-row md:flex-wrap lg:justify-start lg:items-start">
+        <span class="badge bg-gray-100 text-gray-900 justify-center w-fit h-7 text-sm rounded-md">PM10 (3)</span>
+        <span class="badge bg-gray-100 text-gray-900 justify-center w-fit h-7 text-sm rounded-md">CO2 (3)</span>
+        <span class="badge bg-gray-100 text-gray-900 justify-center w-fit h-7 text-sm rounded-md">Temperature (3)</span>
+        <span class="badge bg-gray-100 text-gray-900 justify-center w-fit h-7 text-sm rounded-md">Humidity (3)</span>
+      </div>
+      <div class="relative mt-16 md:mt-24 xl:mt-32">
+        <a href="/sensors" class="absolute bottom-0 right-0 underline">See Details</a>
+      </div>
+		</div>
+	</div>
+</section>
+
+
+<section class="px-4 py-11 mx-auto max-w-7xl font-modern">
+  <div class="pb-4 md:pb-14 lg:pb-16">
+    <h1 class="font-medium text-2xl">Air quality history chart</h1>
+  </div>
+ 
+  <div class="flex static justify-center pb-4 gap-3 filter-groups md:relative md:justify-end md:pb-0">
+    <div class="form-check static form-check-inline md:absolute md:right-0 z-10">
+      <input class="hidden" type="radio" name="filter_date" id="b_daily" value="daily" checked>
+        <label class="form-check-label inline-block btn btn-outline-dark border-prime hover:bg-prime btn-filter-active" for="b_daily" id="daily">Daily</label>
+      <input class="hidden" type="radio" name="filter_date" id="b_weakly" value="weakly">
+        <label class="form-check-label inline-block btn btn-outline-dark border-prime hover:bg-prime" for="b_weakly" id="weakly">Weakly</label>
+    </div>
+  </div>
+
+
+  <div class=" container mx-auto w-full h-[442px]" id="chart">
+  </div>
+</section>
+

@@ -1,0 +1,111 @@
+<div class="w-full sm:px-4 font-modern py-11">
+    <div class="pb-4">
+        <h1 class="font-medium text-2xl">Sensors List</h1>
+    </div>
+    <section class="flex flex-col lg:flex-row">
+        <div class="bg-prime shadow px-4 pb-2 overflow-x-auto lg:w-6/12 md:px-5 h-fit">
+            <table class="min-w-full text-sm divide-y divide-gray-200 text-secondary">
+                <thead>
+                <tr>
+                    <th class="p-4 font-medium text-left whitespace-nowrap">
+                    <div class="flex items-center">Device</div>
+                    </th>
+                    <th class="p-4 font-medium text-left whitespace-nowrap">
+                    <div class="flex items-center">Connection</div>
+                    </th>
+                    <th class="p-4 font-medium text-left whitespace-nowrap">
+                    <div class="flex items-center">Location</div>
+                    </th>
+                    <th class="p-4 font-medium text-left whitespace-nowrap">
+                    <div class="flex items-center">Status</div>
+                    </th>
+                </tr>
+                </thead>
+            
+                <tbody class="divide-y divide-gray-100">
+                <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
+                    <td class="p-4 font-medium whitespace-nowrap">Raspi #001</td>
+                    <td class="p-4 whitespace-nowrap">
+                    <strong class="bg-[#F58840] px-3 py-1.5 rounded text-xs font-medium">Failed</strong>
+                    </td>
+                    <td class="p-4 whitespace-nowrap">Parkiran Motor</td>
+                    <td class="p-4 whitespace-nowrap">
+                    <strong class="bg-[#F58840] px-3 py-1.5 rounded text-xs font-medium">Maintenance</strong>
+                    </td>
+                </tr>
+
+                <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
+                    <td class="p-4 font-medium whitespace-nowrap">Raspi #002</td>
+                    <td class="p-4 whitespace-nowrap">
+                    <strong class="bg-[#8BDB81] px-3 py-1.5 rounded text-xs font-medium">Connected</strong>
+                    </td>
+                    <td class="p-4 whitespace-nowrap">Balai Kota</td>
+                    <td class="p-4 whitespace-nowrap">
+                    <strong class="bg-[#8BDB81] px-3 py-1.5 rounded text-xs font-medium">Active</strong>
+                    </td>
+                </tr>
+
+                <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
+                    <td class="p-4 font-medium whitespace-nowrap">Raspi #003</td>
+                    <td class="p-4 whitespace-nowrap">
+                    <strong class="bg-[#FF6464] px-3 py-1.5 rounded text-xs font-medium">Lost</strong>
+                    </td>
+                    <td class="p-4 whitespace-nowrap">Kelurahan Kalipaten</td>
+                    <td class="p-4 whitespace-nowrap">
+                    <strong class="bg-[#FF6464] px-3 py-1.5 rounded text-xs font-medium">Error</strong>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="bg-prime shadow px-4 my-4 md:px-5 pb-2 lg:w-6/12 lg:ml-5 lg:my-0 box-show text-secondary">
+            <div class="flex flex-col lg:flex-row-reverse px-2">
+
+                <section class="flex justify-center flex-col items-center">
+                    <span>
+                        <img src="/img/good.svg" alt="good condition" class="h-60 w-60 py-3 ">
+                    </span>
+                    <span>
+                        <h1 class="text-xl text-center">Good Condition</h1>
+                        <p class="text-sm text-center">the devices is in good condition and will continue to work</p>
+                    </span>
+                </section>
+                <section class="py-3 md:py-0">
+                    <div class="px-1 py-3">
+                        <h1 class="text-xl pb-2">Device</h1>
+                        <p class="text-sm">Raspi #001</p>
+                    </div>
+                    <div class="px-1 py-3">
+                        <h1 class="text-xl pb-2">Sensors</h1>
+                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">PM10</span>
+                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">CO2</span>
+                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">Temperature</span>
+                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">Humidity</span>
+                    </div>
+                    <div class="px-1 py-3 flex flex-row gap-2">
+                        <section>
+                            <h1 class="text-xl pb-2">Status</h1>
+                            <span class="badge bg-[#8BDB81] text-white px-6 rounded-md font-normal">Active</span>
+                        </section>
+                        <section>
+                            <h1 class="text-xl pb-2">Connection</h1>
+                            <span class="badge bg-[#8BDB81] text-white px-6 rounded-md font-normal">Connected</span>
+                        </section>
+                    </div>
+                    <div class="px-1 py-3">
+                        <h1 class="text-xl pb-2">Location</h1>
+                        <p class="text-sm">Balai Kota Desa Kalipaten</p>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="relative py-5">
+                <p class="text-xs absolute bottom-0 text-center md:right-0 lg:text-sm">Last Update : 2:00 PM - sat, 12 march 2022</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+

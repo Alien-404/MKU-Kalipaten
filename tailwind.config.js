@@ -5,7 +5,17 @@ module.exports = {
     './public/**/*.{css, js}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        modern: ['Modern Sans']
+      },
+      colors: {
+        prime: '#3740CA',
+        secondary: '#EFFFFD'
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('kutty')
+  ],
 }

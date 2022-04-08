@@ -8,7 +8,7 @@ const app = express();
 
 /*
     Node js template engine
-    - EJS layouts engine
+    EJS layouts engine
 */
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -17,10 +17,11 @@ app.use(expressLayouts);
 /*
     Get router import
 */ 
-const {root} = require('./config/routes/router');
+const {root, page404} = require('./config/routes/router');
 
 // use the route
 app.use('/', root); // root pages
+app.use(page404); // 404 page not found
 
 
 // run the apps
