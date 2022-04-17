@@ -1,19 +1,13 @@
-// req package
-var echarts = require('echarts');
-
-// get element
 var filter_daily = document.getElementById('daily');
 var filter_weakly = document.getElementById('weakly');
 var chartDom = document.getElementById('chart');
 var btn_filter = document.getElementsByClassName('btn_filter');
 
-
 $(document).ready(function() {
   $('.filter-groups').on('click', '.btn', function() {
     $(this).addClass('btn-filter-active').siblings().removeClass('btn-filter-active');
   })
-})
-
+});
 
 // chart init
 var homeChart = echarts.init(chartDom);
@@ -23,29 +17,30 @@ var data = {
   PM10: {
     name: 'PM10',
     type: 'line',
-    data: [185, 80, 155, 18, 55, 100],
+    data: [<%= data_chart.daily_mean_data_sensors.PM10 %>],
     smooth: true
   },
   CO2: {
     name: 'CO2',
     type: 'line',
-    data: [175, 70, 121, 29, 25, 190],
+    data: [<%= data_chart.daily_mean_data_sensors.CO2 %>],
     smooth: true
   },
   Temperature: {
     name: 'Temperature',
     type: 'line',
-    data: [26, 20, 21, 24, 26, 21],
+    data: [<%= data_chart.daily_mean_data_sensors.Temperature %>],
     smooth: true
   },
   Humidity: {
     name: 'Humidity',
     type: 'line',
-    data: [80, 70, 91, 80, 85, 90],
+    data: [<%= data_chart.daily_mean_data_sensors.Humidity %>],
     smooth: true
   },
 }
 
+// event click for daily
 filter_daily.addEventListener('click', () => {
   option = {
     tooltip: {
@@ -75,7 +70,7 @@ filter_daily.addEventListener('click', () => {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Wed, 02 March', 'Fri, 04 March', 'Sun, 06 March', 'Tue, 08 March', 'Thue, 10 March', 'Sat, 12 March'],
+      data: ['<%= data_chart.daily_date_info[0] %>', '<%= data_chart.daily_date_info[1] %>', '<%= data_chart.daily_date_info[2] %>'],
       axisLabel: {
         fontFamily: 'modern sans'
       }
@@ -84,41 +79,42 @@ filter_daily.addEventListener('click', () => {
       type: 'value'
     },
     series: [
-      {
-        name: 'PM10',
-        type: 'line',
-        data: [185, 80, 155, 18, 55, 100],
-        smooth: true
-      },
-      {
-        name: 'CO2',
-        type: 'line',
-        data: [175, 70, 121, 29, 25, 190],
-        smooth: true
-      },
-      {
-        name: 'Temperature',
-        type: 'line',
-        data: [26, 20, 21, 24, 26, 21],
-        smooth: true
-      },
-      {
-        name: 'Humidity',
-        type: 'line',
-        data: [80, 70, 91, 80, 85, 90],
-        smooth: true
-      },
+        {
+            name: 'PM10',
+            type: 'line',
+            data: [<%= data_chart.daily_mean_data_sensors.PM10 %>],
+            smooth: true
+        },
+        {
+            name: 'CO2',
+            type: 'line',
+            data: [<%= data_chart.daily_mean_data_sensors.CO2 %>],
+            smooth: true
+        },
+        {
+            name: 'Temperature',
+            type: 'line',
+            data: [<%= data_chart.daily_mean_data_sensors.Temperature %>],
+            smooth: true
+        },
+        {
+            name: 'Humidity',
+            type: 'line',
+            data: [<%= data_chart.daily_mean_data_sensors.Humidity %>],
+            smooth: true
+        },
     ]
   };
   option && homeChart.setOption(option);
 })
 
+// event click for weekly
 filter_weakly.addEventListener('click', () => {
   var data_weakly = {...data};
-  data_weakly.PM10.data = [155, 70, 95, 38, 25, 120]
-  data_weakly.CO2.data = [185, 80, 155, 18, 55, 100]
-  data_weakly.Temperature.data = [17, 18, 15, 18, 20, 12]
-  data_weakly.Humidity.data = [85, 80, 95, 98, 95, 90]
+  data_weakly.PM10.data = [<%= data_chart.weekly_mean_data_sensors.PM10 %>];
+  data_weakly.CO2.data = [<%= data_chart.weekly_mean_data_sensors.CO2 %>];
+  data_weakly.Temperature.data = [<%= data_chart.weekly_mean_data_sensors.Temperature %>];
+  data_weakly.Humidity.data = [<%= data_chart.weekly_mean_data_sensors.Humidity %>];
   option = {
     tooltip: {
       trigger: 'axis'
@@ -147,7 +143,7 @@ filter_weakly.addEventListener('click', () => {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['02 March', '09 March', '16 March', '23 March', '30 March', '6 April'],
+      data: ['<%= data_chart.weekly_date_info[0] %>', '<%= data_chart.weekly_date_info[1] %>', '<%= data_chart.weekly_date_info[2] %>'],
       axisLabel: {
         fontFamily: 'modern sans'
       }
@@ -193,7 +189,7 @@ option = {
   xAxis: {
     type: 'category',
     boundaryGap: false,
-    data: ['Wed, 02 March', 'Fri, 04 March', 'Sun, 06 March', 'Tue, 08 March', 'Thue, 10 March', 'Sat, 12 March'],
+    data: ['<%= data_chart.daily_date_info[0] %>', '<%= data_chart.daily_date_info[1] %>', '<%= data_chart.daily_date_info[2] %>'],
     axisLabel: {
       fontFamily: 'modern sans'
     }

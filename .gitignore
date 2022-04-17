@@ -1,3 +1,6 @@
 .env
 /node_modules
 # /config/tailwind
+/config/firebase/firebase_service_key.json
+/config/firebase/firedb-webpack.js
+/models/adding.js

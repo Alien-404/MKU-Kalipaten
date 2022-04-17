@@ -22,39 +22,28 @@
                 </tr>
                 </thead>
             
-                <tbody class="divide-y divide-gray-100">
-                <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
-                    <td class="p-4 font-medium whitespace-nowrap">Raspi #001</td>
-                    <td class="p-4 whitespace-nowrap">
-                    <strong class="bg-[#F58840] px-3 py-1.5 rounded text-xs font-medium">Failed</strong>
-                    </td>
-                    <td class="p-4 whitespace-nowrap">Parkiran Motor</td>
-                    <td class="p-4 whitespace-nowrap">
-                    <strong class="bg-[#F58840] px-3 py-1.5 rounded text-xs font-medium">Maintenance</strong>
-                    </td>
-                </tr>
+                <% data_sensors_list.forEach(sensor => { %>
+                    <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
+                        <input type="hidden" class="id_device" value="<%= sensor.id %>">
+                        <td class="p-4 font-medium whitespace-nowrap"><%= sensor.device_name %></td>
+                        <td class="p-4 whitespace-nowrap">
+                        <% if (sensor.connection) { %>
+                            <strong class="bg-[#8BDB81] px-3 py-1.5 rounded text-xs font-medium">Connected</strong>
+                        <% } else { %>
+                            <strong class="bg-[#FF6464] px-3 py-1.5 rounded text-xs font-medium">Disconnected</strong>
+                        <% } %>
+                        </td>
+                        <td class="p-4 whitespace-nowrap"><%= sensor.device_location_name %></td>
+                        <td class="p-4 whitespace-nowrap">
+                        <% if (sensor.status) { %>
+                            <strong class="bg-[#8BDB81] px-3 py-1.5 rounded text-xs font-medium">Active</strong>
+                        <% } else { %>
+                            <strong class="bg-[#FF6464] px-3 py-1.5 rounded text-xs font-medium">Inactive</strong>
+                        <% } %>
+                        </td>
+                    </tr>
+                <% }) %>
 
-                <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
-                    <td class="p-4 font-medium whitespace-nowrap">Raspi #002</td>
-                    <td class="p-4 whitespace-nowrap">
-                    <strong class="bg-[#8BDB81] px-3 py-1.5 rounded text-xs font-medium">Connected</strong>
-                    </td>
-                    <td class="p-4 whitespace-nowrap">Balai Kota</td>
-                    <td class="p-4 whitespace-nowrap">
-                    <strong class="bg-[#8BDB81] px-3 py-1.5 rounded text-xs font-medium">Active</strong>
-                    </td>
-                </tr>
-
-                <tr class="data-sensors cursor-pointer hover:bg-secondary hover:text-black">
-                    <td class="p-4 font-medium whitespace-nowrap">Raspi #003</td>
-                    <td class="p-4 whitespace-nowrap">
-                    <strong class="bg-[#FF6464] px-3 py-1.5 rounded text-xs font-medium">Lost</strong>
-                    </td>
-                    <td class="p-4 whitespace-nowrap">Kelurahan Kalipaten</td>
-                    <td class="p-4 whitespace-nowrap">
-                    <strong class="bg-[#FF6464] px-3 py-1.5 rounded text-xs font-medium">Error</strong>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>

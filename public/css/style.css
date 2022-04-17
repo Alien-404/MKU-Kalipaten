@@ -2906,6 +2906,10 @@ a.list-item.list-active:hover {
   margin-bottom: auto;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -2948,6 +2952,10 @@ a.list-item.list-active:hover {
 
 .hidden {
   display: none;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .h-fit {
@@ -2994,10 +3002,6 @@ a.list-item.list-active:hover {
 
 .h-60 {
   height: 15rem;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .h-10 {
@@ -3926,6 +3930,10 @@ a.list-item.list-active:hover {
   padding: 5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -4480,14 +4488,14 @@ a.list-item.list-active:hover {
     width: auto;
   }
 
-  .sm\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .sm\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  .sm\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sm\:text-xl {
@@ -4517,6 +4525,14 @@ a.list-item.list-active:hover {
     margin-bottom: 0px;
   }
 
+  .md\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .md\:mt-4 {
+    margin-top: 1rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4527,16 +4543,6 @@ a.list-item.list-active:hover {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-full {
-    height: 100%;
-  }
-
-  .md\:h-max {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
   }
 
   .md\:w-4\/5 {
@@ -4614,12 +4620,12 @@ a.list-item.list-active:hover {
     display: block;
   }
 
-  .lg\:h-96 {
-    height: 24rem;
-  }
-
   .lg\:h-full {
     height: 100%;
+  }
+
+  .lg\:h-96 {
+    height: 24rem;
   }
 
   .lg\:w-3\/5 {
@@ -4674,6 +4680,11 @@ a.list-item.list-active:hover {
     justify-content: space-between;
   }
 
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -4682,11 +4693,6 @@ a.list-item.list-active:hover {
   .lg\:py-0 {
     padding-top: 0px;
     padding-bottom: 0px;
-  }
-
-  .lg\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .lg\:pb-16 {
