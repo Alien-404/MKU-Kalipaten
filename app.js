@@ -25,6 +25,6 @@ app.use(page404); // 404 page not found
 
 
 // run the apps
-app.listen(process.env.PORT, (req, res) => {
-    console.log(`apps running on port ${process.env.PORT} | http://localhost:${process.env.PORT}`);
+app.listen(process.env.PORT || 8080, (req, res) => {
+    console.log(`apps running on port ${process.env.PORT || 8080} | http://localhost:${process.env.PORT || 8080}`);
 })
