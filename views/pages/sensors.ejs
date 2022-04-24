@@ -52,44 +52,43 @@
 
                 <section class="flex justify-center flex-col items-center">
                     <span>
-                        <img src="/img/good.svg" alt="good condition" class="h-60 w-60 py-3 ">
+                        <img src="/img/device-icons/unselect.svg" alt="good condition" class="h-60 w-60 py-3 image-condition">
                     </span>
                     <span>
-                        <h1 class="text-xl text-center">Good Condition</h1>
-                        <p class="text-sm text-center">the devices is in good condition and will continue to work</p>
+                        <h1 class="text-xl text-center title-condition">No Condition</h1>
+                        <p class="text-sm text-center text-condition">you have not selected an available device in the device list</p>
                     </span>
                 </section>
                 <section class="py-3 md:py-0">
                     <div class="px-1 py-3">
                         <h1 class="text-xl pb-2">Device</h1>
-                        <p class="text-sm">Raspi #001</p>
+                        <p class="text-sm default" id="device-name">Undetect</p>
                     </div>
                     <div class="px-1 py-3">
                         <h1 class="text-xl pb-2">Sensors</h1>
-                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">PM10</span>
-                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">CO2</span>
-                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">Temperature</span>
-                        <span class="badge bg-gray-100 text-gray-900 px-5 rounded-md">Humidity</span>
+                        <div class="flex flex-row flex-wrap gap-2 list-sensors">
+                            <span class="badge bg-gray-100 text-gray-900 rounded-md sensor default">No Sensor</span>
+                        </div>
                     </div>
                     <div class="px-1 py-3 flex flex-row gap-2">
-                        <section>
+                        <section class="status-device">
                             <h1 class="text-xl pb-2">Status</h1>
-                            <span class="badge bg-[#8BDB81] text-white px-6 rounded-md font-normal">Active</span>
+                            <span class="badge bg-gray-100 text-gray-900 px-6 rounded-md font-normal status default">Undetect</span>
                         </section>
-                        <section>
+                        <section class="connection-device">
                             <h1 class="text-xl pb-2">Connection</h1>
-                            <span class="badge bg-[#8BDB81] text-white px-6 rounded-md font-normal">Connected</span>
+                            <span class="badge bg-gray-100 text-gray-900 px-6 rounded-md font-normal connection default">Undetect</span>
                         </section>
                     </div>
                     <div class="px-1 py-3">
                         <h1 class="text-xl pb-2">Location</h1>
-                        <p class="text-sm">Balai Kota Desa Kalipaten</p>
+                        <p class="text-sm default" id="device-location">Undetect</p>
                     </div>
                 </section>
             </div>
             
             <div class="relative py-5">
-                <p class="text-xs absolute bottom-0 text-center md:right-0 lg:text-sm">Last Update : 2:00 PM - sat, 12 march 2022</p>
+                <p class="text-xs absolute bottom-0 text-center md:right-0 lg:text-sm">Last Update : <span id="last-update" class="default"> Undetect</span></p>
             </div>
         </div>
     </section>

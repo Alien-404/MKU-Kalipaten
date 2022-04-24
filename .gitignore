@@ -3,4 +3,5 @@
 # /config/tailwind
 /config/firebase/firebase_service_key.json
 /config/firebase/firedb-webpack.js
+/controller/sensors/webpack-firedb.js
 /models/adding.js

@@ -1,9 +1,10 @@
 const {getAllDevices, getAllDevicesHealth} = require('../../models/fetching');
+const {UpdatingDeviceHealth} = require('../../models/updating');
 const _ = require('lodash');
 
-// (async () => {
-
-// })();
+(async () => {
+    UpdatingDeviceHealth();
+})();
 
 module.exports.sensors_list = async () => {
     // get two data from DB

@@ -155,6 +155,7 @@ module.exports.getAllDevices = async () => {
  * Func for get all devices health from DB
  */
 module.exports.getAllDevicesHealth = async () => {
+    
     const snapshot = await fireDB.collection('device_health').get();
     let device_health = [];
 
@@ -169,7 +170,31 @@ module.exports.getAllDevicesHealth = async () => {
     return device_health;
 }
 
-// (async () => {
+/**
+ * Func for get device health id by device name as params
+ * @param {String} device_name
+ * @param {number} limit
+ */
+module.exports.getDeviceHealthIdByDeviceName = async (device_name, limit = 1) => {
+    // get reference
+    const reference = await getDeviceIdByName(device_name);
 
+    const snapshot = await fireDB.collection('device_health').where('device_id', '==', reference).limit(limit).get();
+    let device_health = [];
+
+    if(snapshot.empty) {
+        return device_health;
+    } else {
+        snapshot.forEach(doc => {
+            device_health.push({device_health_id:doc.id});
+        });
+    }
+
+    return device_health;
+
+}
+
+
+// (async () => {
 
 // })();
