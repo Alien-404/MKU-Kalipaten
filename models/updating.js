@@ -11,8 +11,10 @@ module.exports.UpdatingDeviceHealth = async () => {
     const devices = await getAllDevices();
     
     devices.forEach(async device => {
+        // get data sensors 
         const data_sensors = await getDataSensorsByDesc(device.device_name);
 
+        // convert timestamps firebase into date
         const milisDate = data_sensors[0].created_at._seconds * 1000;
         const sensors_date = moment(milisDate).toDate();
 
@@ -27,6 +29,7 @@ module.exports.UpdatingDeviceHealth = async () => {
             // set firedb doc
             const healthRef = fireDB.collection('device_health').doc(device_health_id[0].device_health_id);
 
+            // update the data
             const res = await healthRef.update({
                 status: false,
                 connection: false,
@@ -40,6 +43,7 @@ module.exports.UpdatingDeviceHealth = async () => {
             // set firedb doc
             const healthRef = fireDB.collection('device_health').doc(device_health_id[0].device_health_id);
 
+            // update the data 
             const res = await healthRef.update({
                 status: true,
                 connection: false,

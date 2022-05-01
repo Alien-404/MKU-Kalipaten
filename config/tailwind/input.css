@@ -4,13 +4,16 @@
 
 @layer base {
     @font-face {
-    font-family: 'Modern Sans';
-    src: url('public/font/Modern-Sans.tff') format('tff');
+        font-family: 'Modern Sans';
+        src: url('public/font/Modern-Sans.tff') format('tff');
     }
 }
 
 @layer components {
     .btn-filter-active {
        @apply btn btn-light bg-prime text-secondary hover:bg-white hover:text-gray-700
+    }
+    .popup-maps {
+        @apply block lg:hidden
     }
 }

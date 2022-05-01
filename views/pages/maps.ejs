@@ -1,25 +1,31 @@
 <div class="w-full lg:px-4 font-modern">
     <div class="flex flex-col lg:flex-row">
         <div class="min-h-full lg:w-3/5 bg-slate-300 relative">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0221784479672!2d106.61622811424147!3d-6.260808695468283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fc7ca656fdfd%3A0x782b035b695c85dc!2sPradita%20University!5e0!3m2!1sen!2sid!4v1649393685815!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-screen lg:h-full"></iframe>
+            <div class="w-full h-screen lg:h-full z-0" id="map">
+                <!-- map leaflet -->
+            </div>
             <div class="absolute bottom-0 m-auto left-0 right-0 hidden md:block">
                 <div class="bg-prime h-fit w-fit text-secondary rounded-md m-auto mb-4">
                     <h3 class="text-sm text-center pb-1">Air Quality</h3>
                     <div class="flex flex-row gap-3 px-2">
                         <section class="flex flex-col justify-center items-center">
-                            <div class="bg-[#8BDB81] h-4 w-4"></div>
+                            <div class="bg-[#8BDB81] h-5 w-5 rounded-full"></div>
                             <p class="text-sm whitespace-nowrap">Good</p>
                         </section>
                         <section class="flex flex-col justify-center items-center">
-                            <div class="bg-[#FFE162] h-4 w-4"></div>
+                            <div class="bg-[#FFE162] h-5 w-5 rounded-full"></div>
                             <p class="text-sm">Moderate</p>
                         </section>
                         <section class="flex flex-col justify-center items-center">
-                            <div class="bg-[#F58840] h-4 w-4"></div>
-                            <p class="text-sm">Bad</p>
+                            <div class="bg-[#FF6464] h-5 w-5 rounded-full"></div>
+                            <p class="text-sm">Unhealthy</p>
                         </section>
                         <section class="flex flex-col justify-center items-center">
-                            <div class="bg-[#FF6464] h-4 w-4"></div>
+                            <div class="bg-[#a070b6] h-5 w-5 rounded-full"></div>
+                            <p class="text-sm">Very Unhealthy</p>
+                        </section>
+                        <section class="flex flex-col justify-center items-center">
+                            <div class="bg-[#a06a7b] h-5 w-5 rounded-full"></div>
                             <p class="text-sm">Dangerous</p>
                         </section>
                     </div>
@@ -37,37 +43,39 @@
                         </svg>
                         <p class="text-xs px-1">Location</p>
                     </span>
-                    <h3 class="py-2 text-sm">Kalipaten, suka raya / sensor: Raspi #001</h3>
+                    <h3 class="py-2 text-sm"><span class="device-location">No Location</span> / sensor: <span class="device-name">No Sensor</span></h3>
                 </section>
                 <section>
                     <h1 class="text-sm py-5">AIR QUALITY</h1>
                     <span class="flex flex-col">
-                        <h2 class="text-lg text-center">Clean air!</h2>
-                        <p class="text-sm text-center px-28">You can go outside without fear and enjoy the day!</p>
-                        <img src="/img/air_quality/very_good.svg"  alt="very good air quality" class="h-48 py-6">
+                        <h2 class="text-lg text-center title">Nothings Here</h2>
+                        <p class="text-sm text-center px-28 sub-title">You haven't selected the desired location, try to click a location on the map!</p>
+                        <img src="/img/air_quality/unselect.svg"  alt="very good air quality" class="h-36 py-6 cover-svg">
                     </span>
                 </section>
                 <section class="py-2 flex">
                     <img src="/img/icons/prime/pm10.svg" alt="pm10 icon" class="h-6 w-6">
                     <h2 class="text-sm px-1">PM10</h2>
-                    <p class="ml-auto text-sm mx-10">26 µg/m³</p>
+                    <p class="ml-auto text-sm mx-10"><span class="pm10">0</span> µg/m³</p>
                 </section>
                 <section class="py-2 flex">
                     <img src="/img/icons/prime/co2.svg" alt="pm10 icon" class="h-6 w-6">
                     <h2 class="text-sm px-1">CO2</h2>
-                    <p class="ml-auto text-sm mx-10">756 ppm</p>
+                    <p class="ml-auto text-sm mx-10"><span class="co2">0</span> ppm</p>
                 </section>
                 <section class="py-2 flex">
                     <img src="/img/icons/prime/temperature.svg" alt="pm10 icon" class="h-6 w-6">
                     <h2 class="text-sm px-1">Temperature</h2>
-                    <p class="ml-auto text-sm mx-10">26°C</p>
+                    <p class="ml-auto text-sm mx-10"><span class="temperature">0</span>°C</p>
                 </section>
                 <section class="py-2 flex">
                     <img src="/img/icons/prime/humidity.svg" alt="pm10 icon" class="h-6 w-6">
                     <h2 class="text-sm px-1">Humidity</h2>
-                    <p class="ml-auto text-sm mx-10">96%</p>
+                    <p class="ml-auto text-sm mx-10"><span class="humidity">0</span>%</p>
                 </section>
+                <p class="text-xs pt-3 text-right">updated at : <span class="updated-at">-</span></p>
             </div>
         </div>
     </div>
 </div>
+

@@ -9,6 +9,7 @@ const AppCache = new NodeCache({
 });
 // get data from controller
 const {statistics_head, info_body, chart_data} = require('../../controller/overview/');
+const {mapInfo} = require('../../controller/map/');
 const {sensors_list} = require('../../controller/sensors/');
 
 
@@ -66,10 +67,34 @@ router.get('/', async (req, res) => {
 // maps url (ex: https://domain.com/maps)
 router.get('/maps', async (req, res) => {
     
-    res.render('pages/maps', {
-        layout: 'layouts/secondary-layouts',
-        title: 'Airly | Maps',
-    })
+    // check cache has data or not 
+    if(AppCache.has('map_info')) {
+        res.render('pages/maps', {
+            layout: 'layouts/secondary-layouts',
+            title: 'Airly | Maps',
+            map_info: AppCache.get('map_info')
+        })
+    } else {
+        try {
+            // get data
+            const map_info = await mapInfo();
+
+            // set cache
+            AppCache.mset([
+                {key: 'map_info', val: map_info}
+            ]);
+
+            res.render('pages/maps', {
+                layout: 'layouts/secondary-layouts',
+                title: 'Airly | Maps',
+                map_info
+            })
+
+        } catch (error) {
+            console.error(`${error}`);
+        }
+    }
+    
 });
 
 // sensors url (ex: https://domain.com/sensors)

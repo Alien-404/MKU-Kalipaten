@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-minify.css">
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.css" />
+    <style type="text/css">
+        @media only screen and (min-width: 960px) {
+            .popup-maps {
+                display: none;
+            }
+        } 
+    </style>
     <title><%- title %></title>
 </head>
 <body>
 
 <%- include('components/navbar') %>
-
 <%- body %> 
 
 <!-- script js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/kutty@latest/dist/kutty.min.js"></script>
+<!-- leaflet -->
+<script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-responsive-popup@0.6.4/leaflet.responsive.popup.js"></script>
+<script>
+    <%- include('components/map-pages.js') %>
+</script>
 </body>
 </html>

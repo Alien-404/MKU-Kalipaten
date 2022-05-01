@@ -13,7 +13,7 @@ const getDeviceIdByName = async (device_name) => {
     
     if(snapshot.empty) {
         console.log(`oops device '${device_name}' not found in DB`);
-        return;
+        return device_id;
     } else {
         snapshot.forEach(doc => {
             device_id += doc.id;
@@ -67,6 +67,12 @@ module.exports.getDeviceById = async (device_name) => {
 
     if(!doc_device.exists) {
         console.log(`oops device not found!`);
+        // cretae dummy data
+        return result = {
+            device_name: 'No Device',
+            device_location_name: 'No Location',
+            sensors: ['No Sensors']
+        }
     } else {
         return doc_device.data();
     }
@@ -121,6 +127,7 @@ module.exports.getDataSensorsByDesc = async (device_name, limit = 1) => {
     // logic check
     if(snapshot.empty) {
         console.log(`oops data device not found`);
+        return devices;
     } else {
         snapshot.forEach(doc => {
             devices.push({...doc.data(), id:doc.id})
@@ -193,6 +200,7 @@ module.exports.getDeviceHealthIdByDeviceName = async (device_name, limit = 1) =>
     return device_health;
 
 }
+
 
 
 // (async () => {

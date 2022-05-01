@@ -5,6 +5,7 @@ const {
         getDataSensorsByDesc,
         getAllDevices
     } = require('../../models/fetching');
+const {geoJSON} = require('../../models/geojson');
 const _ = require('lodash');
 const moment = require('moment');
 const { isEmpty } = require('lodash');
@@ -15,6 +16,8 @@ const device_name = 'Raspi #003';
 // (async () => {
 
 // })();
+
+
 
 module.exports.statistics_head = async () => {
     // init yesterday date
@@ -156,6 +159,7 @@ module.exports.statistics_head = async () => {
 module.exports.info_body = async () => {
     // get data
     const devices = await getAllDevices();
+    const dataGeo = await geoJSON();
 
     if(isEmpty(devices)) {
         const totalDevices = 0;
@@ -180,7 +184,8 @@ module.exports.info_body = async () => {
 
         const result = {
             totalDevices,
-            sensors
+            sensors,
+            dataGeo
         }
 
         return result;
@@ -338,3 +343,5 @@ module.exports.chart_data = async () => {
         console.error('promises rejected');
     }
 }
+
+// export some func 
